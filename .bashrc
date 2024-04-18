@@ -24,7 +24,7 @@ if command -v sway &>/dev/null; then
 
 	# Also, if this is tty1, start sway instead.
 	if [ "$(tty)" = '/dev/tty1' ]; then
-		exec sway
+		XDG_CURRENT_DESKTOP=sway dbus-run-session sway
 	fi
 fi
 
